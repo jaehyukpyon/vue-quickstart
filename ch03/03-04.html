@@ -10,17 +10,32 @@
         <input type="text" id="a" v-model="name">
         <br>
         입력하신 이름: <span>{{name}}</span>
+
+        <h1>{{name}}</h1>
+        <h1>{{age}}</h1>
+        <h1>{{email}}</h1>
+        <h1>{{test}}</h1>
     </div>
     <script type="text/javascript" src="https://unpkg.com/vue"></script>
     <script type="text/javascript">
+
+        var model = {
+            "name": "hello",
+            "age": 12,
+        };
+        
         var vm = Vue.createApp({
             name: "App",
             data() {
-                return {
-                    name: "",
-                };
+                return model
             }
-        }).mount("#app");
+        });
+
+        model.email = "eggjam82";
+
+        var vm2 = vm.mount("#app");
+
+        model.test="1234";
     </script>
 </body>
 </html>

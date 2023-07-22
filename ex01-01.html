@@ -15,12 +15,21 @@
             message: "Hello Vue3!"
         };
 
+        // var vm = Vue.createApp({
+        //     name: "App",
+        //     data() {
+        //         return model;
+        //     }
+        // }).mount("#app");
+
         var vm = Vue.createApp({
             name: "App",
             data() {
                 return model;
             }
-        }).mount("#app");
+        });
+
+        var vm2 = vm.mount("#app");
     </script>
 </body>
 </html>
