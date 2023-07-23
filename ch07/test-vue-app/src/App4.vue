@@ -1,34 +1,28 @@
 <template>
   <div>
-      <h2>K-POP?</h2>
-      <hr>
-      <ul>
-        
-      </ul>
-      <hr>
+    <InputName @nameChanged="nameChangedHandler" />
+    <br/>
+    <h3>App 데이터: {{ parentName }}</h3>
   </div>
 </template>
 
 <script>
-  import CheckboxItem from './components/CheckboxItem.vue';
+  import InputName from './components/InputName.vue';
 
   export default {
-    name: "App",
+    name: "App4",
     components: {
-      CheckboxItem,
+      InputName,
     },
     data() {
       return {
-        idols: [
-          { id: 1, name: "BTS", checked: true },
-          { id: 2, name: "Black Pink", checked: false },
-          { id: 3, name: "EXO", checked: false },
-          { id: 4, name: "ITZY", checked: false },
-        ],
+        parentName: "",
       };
     },
     methods: {
-      
+      nameChangedHandler(e) {
+        this.parentName = e.name;
+      }
     },
     beforeCreate() {
       console.log("App.vue beforeCreate()");
